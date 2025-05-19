@@ -23,7 +23,7 @@ from pathlib import Path
 import plotly.express as px
 import matplotlib.pyplot as plt
 
-@st.cache_data()
+@st.cache_data
 def load_data():
     filepath = Path('data') / 'german_credit_data.csv'
     df = pd.read_csv(filepath)#.drop(columns=['Unnamed: 0'])
@@ -35,7 +35,7 @@ def load_data():
         
     return cleaned_df
 
-@st.cache_resource()
+@st.cache_resource
 def load_model():
     def add_ratio_features(X):
         X = X.copy()
